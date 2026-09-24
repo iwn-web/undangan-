@@ -1,12 +1,13 @@
 // 1. Fungsi Buka Undangan & Play Music
-const music = document.getElementById("bg-music");
-
 function openWedding() {
-  document.getElementById("main-content").classList.remove("hidden");
-  document.getElementById("hero").style.display = "none";
+  document.getElementById('main-content').classList.remove('hidden');
+  document.getElementById('hero').style.display = 'none';
 
-  // Play Music otomatis saat tombol diklik
-  music.play();
+  const music = document.getElementById('bg-music');
+  music.play().catch(error => {
+    console.log("Autoplay diblokir oleh browser:", error);
+  });
+}
 }
 
 function toggleMusic() {
