@@ -7,24 +7,25 @@ function openWedding() {
   if (mainContent) mainContent.classList.remove("hidden");
 
   // 2. Coba putar audio dengan aman untuk HP
-const music = document.getElementById("bg-music");
-if (music) {
-  music.muted = false; // Memastikan audio tidak ter-mute
-  music.volume = 1.0;  // Memastikan volume penuh
+  const music = document.getElementById("bg-music");
+  if (music) {
+    music.muted = false; // Memastikan audio tidak ter-mute
+    music.volume = 1.0; // Memastikan volume penuh
 
-  // Trik khusus HP: panggil load() untuk membangunkan media player di seluler
-  music.load();
+    // Trik khusus HP: panggil load() untuk membangunkan media player di seluler
+    music.load();
 
-  const playPromise = music.play();
+    const playPromise = music.play();
 
-  if (playPromise !== undefined) {
-    playPromise
-      .then(() => {
-        console.log("Audio berhasil diputar di HP!");
-      })
-      .catch((error) => {
-        console.log("Autoplay audio dicegat browser HP:", error);
-      });
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          console.log("Audio berhasil diputar di HP!");
+        })
+        .catch((error) => {
+          console.log("Autoplay audio dicegat browser HP:", error);
+        });
+    }
   }
 }
 function toggleMusic() {
