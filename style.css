@@ -40,6 +40,7 @@ h3,
 }
 
 /* Overlay Gelap di Atas Gambar */
+/* Overlay Gelap di Atas Gambar */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -53,6 +54,7 @@ h3,
     0.4
   ); /* Menggelapkan gambar 40% agar teks putih terlihat jelas */
   z-index: 1; /* Di atas gambar */
+  pointer-events: none; /* TAMBAHKAN BARIS INI agar klik/sentuhan menembus ke tombol */
 }
 
 /* Konten Teks */
