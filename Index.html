@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Music Background -->
+    <audio id="bg-music" loop>
+      <source src="perangtelahusai.mpeg" type="audio/mpeg" />
+      Browser kamu tidak mendukung audio.
+    </audio>
+
+    <!-- 1. Hero / Cover Section -->
+    <section id="hero" class="hero">
+      <div class="hero-overlay"></div>
+      <!-- Tambahan overlay gelap agar teks terbaca -->
+      <div class="hero-content">
+        <p class="sub-title">The Wedding Of</p>
+        <h1>Dharma &amp; Lyn</h1>
+        <p class="date-hero">Minggu, 01 Desember 2026</p>
+        <button id="btn-open" onclick="openWedding()">
+          <i class="fa-solid fa-envelope-open"></i> Buka Undangan
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Content (Sembunyi sebelum dibuka) -->
+    <main id="main-content" class="hidden">
+      <!-- Control Music Floating Button -->
+      <button id="music-control" onclick="toggleMusic()">
+        <i id="music-icon" class="fa-solid fa-compact-disc fa-spin"></i>
+      </button>
+
+      <!-- 2. Couple Section -->
+      <!-- 2. Couple Section (Foto Prewed Berdua) -->
+      <section class="section couple">
+        <h2>Mempelai</h2>
+        <p class="quote">
+          "Menciptakan momen indah bersama dalam ikatan suci pernikahan."
+        </p>
+
+        <!-- Frame Foto Prewedding Utama -->
+        <div class="prewed-main-frame">
+          <!-- Pastikan nama file foto prewed berdua disesuaikan -->
+          <img src="p2.png" alt="Foto Prewedding Mempelai" />
+        </div>
+
+        <!-- Informasi Teks Mempelai -->
+        <div class="couple-names-container">
+          <div class="groom">
+            <h3>Dharma Adji Widjaja</h3>
+            <p>Bapak Richard Widjaja &amp; Ibu Sri Asih</p>
+          </div>
+
+          <div class="divider">&amp;</div>
+
+          <div class="bride">
+            <h3>Edelyn</h3>
+            <p>Putri dari Bapak C &amp; Ibu D</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Countdown Section -->
+      <section class="section countdown-section">
+        <!-- 2.5 Story / Timeline Section -->
+        <section class="section story">
+          <h2>Kisah Kami</h2>
+          <p class="sub-heading">
+            Perjalanan singkat bagaimana awal mula kami bertemu hingga
+            memutuskan untuk berlabuh bersama.
+          </p>
+
+          <div class="timeline">
+            <!-- Momen 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Januari 2022</span>
+                <h3>Pertama Kali Bertemu</h3>
+                <p>
+                  Berawal dari sebuah acara kampus/kantor, kami berkenalan
+                  secara tidak sengaja dan mulai sering bertukar cerita.
+                </p>
+              </div>
+            </div>
+
+            <!-- Momen 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Maret 2023</span>
+                <h3>Memulai Komitmen</h3>
+                <p>
+                  Setelah melewati banyak momen bersama, kami sepakat untuk
+                  menjalin hubungan dan saling mendukung satu sama lain.
+                </p>
+              </div>
+            </div>
+
+            <!-- Momen 3 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Agustus 2025</span>
+                <h3>Lamaran / Engagement</h3>
+                <p>
+                  Di hadapan kedua keluarga besar, kami mengikrarkan niat serius
+                  untuk melangkah ke jenjang pernikahan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <h2>Menghitung Hari</h2>
+        <div id="timer" class="timer">
+          <div><span id="days">00</span><small>Hari</small></div>
+          <div><span id="hours">00</span><small>Jam</small></div>
+          <div><span id="minutes">00</span><small>Menit</small></div>
+          <div><span id="seconds">00</span><small>Detik</small></div>
+        </div>
+      </section>
+
+      <!-- 4. Event Details & Maps -->
+      <section class="section event">
+        <h2>Waktu &amp; Lokasi</h2>
+        <div class="event-cards">
+          <div class="card">
+            <h3>Akad Nikah</h3>
+            <p><i class="fa-regular fa-clock"></i> 08.00 - 10.00 WIB</p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i> Gedung Pernikahan Indah
+            </p>
+          </div>
+          <div class="card">
+            <h3>Resepsi</h3>
+            <p><i class="fa-regular fa-clock"></i> 11.00 - Selesai</p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i> Gedung Pernikahan Indah
+            </p>
+          </div>
+        </div>
+        <!-- Embed Google Maps -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.81956135000001!3d-6.194741399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e6732914040a!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- 5. Digital Gift / Amplop Digital -->
+      <section class="section gift">
+        <h2>Amplop Digital</h2>
+        <p>
+          Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika ingin
+          memberi hadiah, Anda dapat mengirimkannya melalui:
+        </p>
+        <div class="bank-card">
+          <h4>Bank BCA</h4>
+          <p>No. Rekening: <strong id="norek">1234567890</strong></p>
+          <p>a.n. Dharma Adji Widjaja</p>
+          <button onclick="copyToClipboard('1234567890')">
+            <i class="fa-regular fa-copy"></i> Salin Rekening
+          </button>
+        </div>
+      </section>
+
+      <!-- 6. RSVP via WhatsApp -->
+      <section class="section rsvp">
+        <h2>Konfirmasi Kehadiran</h2>
+        <form id="rsvp-form" onsubmit="sendToWhatsapp(event)">
+          <input type="text" id="nama" placeholder="Nama Lengkap" required />
+          <select id="kehadiran" required>
+            <option value="">Pilih Konfirmasi Kehadiran</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
+          <textarea
+            id="pesan"
+            placeholder="Ucapan / Doa untuk kedua mempelai"
+            rows="4"
+          ></textarea>
+          <button type="submit">
+            <i class="fa-brands fa-whatsapp"></i> Kirim Konfirmasi
+          </button>
+        </form>
+      </section>
+
+      <footer>
+        <p>Dibuat dengan ❤️ oleh Dharma &amp; Lyn</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,422 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #faf9f6;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+.sub-title {
+  font-family: "Playfair Display", serif;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* GANTI URL DI BAWAH INI DENGAN NAMA FILE GAMBAR KOLASE KAMU */
+  background-image: url("p1.jpg");
+  background-repeat: no-repeat;
+  background-position: center top; /* Fokus ke bagian atas gambar agar wajah tidak terpotong di HP */
+  background-size: cover; /* Gambar akan memenuhi layar */
+  color: #fff;
+  padding: 20px;
+  position: relative; /* Penting untuk overlay */
+}
+
+/* Overlay Gelap di Atas Gambar */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Menggelapkan gambar 40% agar teks putih terlihat jelas */
+  z-index: 1; /* Di atas gambar */
+}
+
+/* Konten Teks */
+.hero-content {
+  position: relative;
+  z-index: 2; /* Di atas overlay */
+  text-align: center;
+}
+
+.hero .sub-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 3.5rem; /* Lebih besar */
+  margin: 10px 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero .date-hero {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.hero button {
+  padding: 12px 30px;
+  margin-top: 30px;
+  font-size: 1rem;
+  background-color: #d4af37;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.hero button:hover {
+  background-color: #fff;
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+.hero button i {
+  margin-right: 8px;
+}
+
+/* Responsif untuk Layar HP */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+}
+/* Sections General */
+.section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+/* Couple */
+/* Couple Section */
+.couple .quote {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* Frame Foto Prewed Utama */
+.prewed-main-frame {
+  width: 100%;
+  max-width: 450px; /* Ukuran lebar maksimum foto */
+  margin: 0 auto 30px auto;
+  border-radius: 15px; /* Sudut melengkung */
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Efek bayangan */
+  border: 4px solid #fff; /* Bingkai putih */
+}
+
+.prewed-main-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.prewed-main-frame:hover img {
+  transform: scale(1.03); /* Efek zoom halus saat disentuh/hover */
+}
+
+/* Tata Letak Nama Mempelai */
+.couple-names-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.couple-names-container h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.couple-names-container p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.divider {
+  font-size: 2.2rem;
+  color: #d4af37;
+  font-family: "Playfair Display", serif;
+  margin: 5px 0;
+}
+
+/* Tampilan di Layar Komputer / Tablet */
+@media (min-width: 600px) {
+  .couple-names-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .groom,
+  .bride {
+    flex: 1;
+  }
+
+  .divider {
+    margin: 0 20px;
+    align-self: center;
+  }
+}
+/* Countdown */
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.timer div {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  width: 70px;
+}
+
+.timer span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+/* Cards & Forms */
+.event-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card,
+.bank-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.map-container {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input,
+select,
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+button[type="submit"],
+.bank-card button {
+  background-color: #25d366;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bank-card button {
+  background-color: #d4af37;
+  margin-top: 10px;
+}
+
+/* Music Floating Button */
+#music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Story / Timeline Section */
+.story .sub-heading {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* Garis tengah/samping timeline */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px; /* Di HP diletakkan di sebelah kiri */
+  width: 2px;
+  background-color: #e0e0e0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Titik emas di sepanjang garis */
+.timeline-dot {
+  position: absolute;
+  left: 13px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #d4af37;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #d4af37;
+}
+
+/* Kotak isi cerita */
+.timeline-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #d4af37;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Tampilan di layar laptop/komputer */
+@media (min-width: 600px) {
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    padding-left: 0;
+    width: 50%;
+  }
+
+  /* Item ganjil di kiri */
+  .timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 30px;
+    text-align: right;
+  }
+
+  /* Item genap di kanan */
+  .timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 30px;
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot {
+    left: auto;
+    right: -8px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+  }
+}
+
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
