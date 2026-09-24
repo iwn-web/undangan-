@@ -182,10 +182,12 @@
         </div>
       </section>
 
-      <!-- 6. RSVP via WhatsApp -->
+      <!-- 6. RSVP & Daftar Ucapan -->
       <section class="section rsvp">
-        <h2>Konfirmasi Kehadiran</h2>
-        <form id="rsvp-form" onsubmit="sendToWhatsapp(event)">
+        <h2>Konfirmasi Kehadiran & Ucapan</h2>
+
+        <!-- Form Kirim -->
+        <form id="rsvp-form" onsubmit="submitMessage(event)">
           <input type="text" id="nama" placeholder="Nama Lengkap" required />
           <select id="kehadiran" required>
             <option value="">Pilih Konfirmasi Kehadiran</option>
@@ -195,14 +197,20 @@
           <textarea
             id="pesan"
             placeholder="Ucapan / Doa untuk kedua mempelai"
-            rows="4"
+            rows="3"
+            required
           ></textarea>
-          <button type="submit">
-            <i class="fa-brands fa-whatsapp"></i> Kirim Konfirmasi
-          </button>
+          <button type="submit" id="btn-submit">Kirim Ucapan</button>
         </form>
-      </section>
 
+        <!-- Daftar Ucapan Tamu -->
+        <div class="comments-container">
+          <h3>Daftar Ucapan Tamu</h3>
+          <div id="comments-list">
+            <p>Memuat ucapan...</p>
+          </div>
+        </div>
+      </section>
       <footer>
         <p>Dibuat dengan ❤️ oleh Dharma &amp; Lyn</p>
       </footer>

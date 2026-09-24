@@ -415,6 +415,71 @@ button[type="submit"],
   }
 }
 
+/* Container Daftar Ucapan */
+.comments-container {
+  margin-top: 40px;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comments-container h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #d4af37;
+  text-align: center;
+}
+
+#comments-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.comment-card {
+  background: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #d4af37;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-header strong {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.badge-hadir {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.badge-absent {
+  background-color: #ffebee;
+  color: #c62828;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.comment-card p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
 footer {
   padding: 20px;
   font-size: 0.9rem;
